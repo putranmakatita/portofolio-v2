@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Putra Makatita – Web Developer</title>
+  <meta name="description" content="Portfolio of Putra Makatita: fullstack, API and mobile developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="uploads/logo-P.png">
+</head>
+
+<body>
+  <div id="progress"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#top" class="logo">Putra's</a>
+    <nav>
+      <a href="#about"><span data-l="en">About</span><span data-l="id">Tentang</span></a>
+      <a href="#services"><span data-l="en">Services</span><span data-l="id">Layanan</span></a>
+      <a href="#work"><span data-l="en">Work</span><span data-l="id">Karya</span></a>
+      <a href="#personal"><span data-l="en">Personal</span><span data-l="id">Personal</span></a>
+      <a href="#contact"><span data-l="en">Contact</span><span data-l="id">Kontak</span></a>
+      <button id="langBtn" aria-label="Switch language">EN / ID</button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== 1. HERO (pinned: letters assemble as you scroll) ===== -->
+    <section class="hero pin" id="hero" data-pin>
+      <div class="stage">
+        <h1 data-l="en" class="name" aria-label="Hello!">
+          <span>H</span><span>E</span><span>L</span><span>L</span><span>O</span><span>!</span>
+        </h1>
+        <h1 data-l="id" class="name" aria-label="Halo!">
+          <span>H</span><span>A</span><span>L</span><span>O</span><span>!</span>
+        </h1>
+        <p class="hello">
+          <span data-l="en">I'm Putra Makatita.</span>
+          <span data-l="id">Saya Putra Makatita.</span>
+        </p>
+        <ul class="roles">
+          <li>Fullstack Web Developer</li>
+          <li>API Web-services Developer</li>
+          <li>Mobile Developer</li>
+        </ul>
+        <p class="scroll-hint"><span data-l="en">Scroll</span><span data-l="id">Gulir</span></p>
+      </div>
+    </section>
+
+    <!-- ===== 2. ABOUT (words light up as you scroll) ===== -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <h2><span data-l="en">About me</span><span data-l="id">Tentang saya</span></h2>
+        <div>
+          <p class="reveal" data-l="en">Just another programmer with highly skilled at solving IT problems, who really
+            love to code.</p>
+          <p class="reveal" data-l="id">Hanya programmer biasa yang sangat mahir dalam menyelesaikan masalah IT, yang
+            benar-benar mencintai koding.</p>
+          <p class="skills">PHP · HTML · CSS · JavaScript · Dart · Java · Python · SQL </p>
+          <img class="banner" src="uploads/putra-banner-edited.jpg" alt="Putra Makatita" loading="lazy">
+          <a class="btn" href="assets/putra-cv-english.pdf"><span data-l="en">Download my CV</span><span
+              data-l="id">Unduh CV saya</span></a>
+          <ul class="certs">
+            <li><a
+                href="https://freecodecamp.org/certification/putranmakatita/javascript-algorithms-and-data-structures">JavaScript
+                Algorithms and Data Structures</a></li>
+            <li><a
+                href="https://freecodecamp.org/certification/putranmakatita/scientific-computing-with-python-v7">Scientific
+                Computing with Python</a></li>
+            <li><a href="https://freecodecamp.org/certification/putranmakatita/back-end-development-and-apis">Back End
+                Development and APIs</a></li>
+            <li><a href="https://freecodecamp.org/certification/putranmakatita/responsive-web-design">Responsive Web
+                Design</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. SERVICES (cards stack on top of each other) ===== -->
+    <section class="services" id="services">
+      <h2><span data-l="en">What I do</span><span data-l="id">Yang saya kerjakan</span></h2>
+      <!-- To add a service: copy one <article class="card"> block. -->
+      <article class="card" style="--c:#3b4bd6">
+        <h3>Fullstack Web Development</h3>
+        <p data-l="en">Comprehensive web development, covering both frontend and backend.</p>
+        <p data-l="id">Pengembangan web menyeluruh, mencakup frontend dan backend.</p>
+      </article>
+      <article class="card" style="--c:#1f7a8c">
+        <h3>API Web-services Development</h3>
+        <p data-l="en">Web API services that let applications and servers talk to each other.</p>
+        <p data-l="id">Layanan web API agar aplikasi dan server dapat saling berkomunikasi.</p>
+      </article>
+      <article class="card" style="--c:#8a3ffc">
+        <h3>Mobile Development</h3>
+        <p data-l="en">Mobile apps for different platforms, such as iOS and Android.</p>
+        <p data-l="id">Aplikasi mobile untuk berbagai platform seperti iOS dan Android.</p>
+      </article>
+      <article class="card" style="--c:#b5446e">
+        <h3>Support</h3>
+        <p data-l="en">Technical support and solutions for application-related issues.</p>
+        <p data-l="id">Dukungan teknis dan solusi untuk masalah terkait aplikasi.</p>
+      </article>
+      <article class="card" style="--c:#c27a12">
+        <h3>Web Idea</h3>
+        <p data-l="en">Creative and innovative ideas for web development.</p>
+        <p data-l="id">Ide-ide kreatif dan inovatif dalam pengembangan web.</p>
+      </article>
+    </section>
+
+    <!-- ===== 4. WORK (pinned, scroll down = slide sideways) ===== -->
+    <section class="hscroll pin" id="work" data-pin>
+      <div class="stage">
+        <h2><span data-l="en">Professional work</span><span data-l="id">Pekerjaan profesional</span></h2>
+        <div class="track">
+          <!-- To add a project: copy one <figure> block, change src and the caption. -->
+          <figure><img src="assets/projects/lccd1.jpeg" alt="LCCD" loading="lazy">
+            <figcaption>LCCD</figcaption>
+          </figure>
+          <figure><img src="assets/projects/pipesys1.jpeg" alt="Pipesys 1" loading="lazy">
+            <figcaption>Pipesys</figcaption>
+          </figure>
+          <figure><img src="assets/projects/pipesys2.jpeg" alt="Pipesys 2" loading="lazy">
+            <figcaption>Pipesys</figcaption>
+          </figure>
+          <figure><img src="assets/projects/rcwebservice.jpeg" alt="RC Web Service" loading="lazy">
+            <figcaption>RC Web Service</figcaption>
+          </figure>
+          <figure><img src="assets/projects/lccr1.jpeg" alt="LCCR" loading="lazy">
+            <figcaption>LCCR</figcaption>
+          </figure>
+          <figure><img src="assets/projects/frlk1.jpeg" alt="FRLK" loading="lazy">
+            <figcaption>FRLK</figcaption>
+          </figure>
+          <figure><img src="assets/projects/peopleshape1.jpeg" alt="Peopleshape 1" loading="lazy">
+            <figcaption>Peopleshape</figcaption>
+          </figure>
+          <figure><img src="assets/projects/peopleshape2.jpeg" alt="Peopleshape 2" loading="lazy">
+            <figcaption>Peopleshape</figcaption>
+          </figure>
+          <figure><img src="assets/projects/peopleshape3.jpeg" alt="Peopleshape 3" loading="lazy">
+            <figcaption>Peopleshape</figcaption>
+          </figure>
+          <figure><img src="assets/projects/rajaderek1.jpeg" alt="Raja Derek 1" loading="lazy">
+            <figcaption>Raja Derek</figcaption>
+          </figure>
+          <figure><img src="assets/projects/rajaderek2.jpeg" alt="Raja Derek 2" loading="lazy">
+            <figcaption>Raja Derek</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4b. PERSONAL PROJECTS (pinned, sideways scroll, same as above) ===== -->
+    <section class="hscroll pin" id="personal" data-pin>
+      <div class="stage">
+        <h2><span data-l="en">Personal projects</span><span data-l="id">Proyek personal</span></h2>
+        <div class="track">
+          <!-- Personal GitHub projects (science + live demo). To add one: copy any <figure class="project"> block. -->
+          <figure class="project">
+            <h3>Periodic Table Quiz</h3>
+            <p data-l="en">Test your knowledge of chemical symbols, names and atomic masses.</p>
+            <p data-l="id">Uji pengetahuanmu tentang simbol, nama, dan massa atom unsur kimia.</p>
+            <div class="links">
+              <a href="https://putranmakatita.github.io/periodic-table-quiz/" target="_blank" rel="noopener"><span
+                  data-l="en">Live demo</span><span data-l="id">Lihat demo</span></a>
+              <a href="https://github.com/putranmakatita/periodic-table-quiz" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </figure>
+          <figure class="project">
+            <h3>Arithmetic Circuit Lab</h3>
+            <p data-l="en">Click the inputs and watch signals travel through a logic circuit.</p>
+            <p data-l="id">Klik input dan lihat sinyal mengalir melalui rangkaian logika.</p>
+            <div class="links">
+              <a href="https://putranmakatita.github.io/arithmatic-circuit-lab/" target="_blank" rel="noopener"><span
+                  data-l="en">Live demo</span><span data-l="id">Lihat demo</span></a>
+              <a href="https://github.com/putranmakatita/arithmatic-circuit-lab" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </figure>
+          <figure class="project">
+            <h3>ebureader</h3>
+            <p data-l="en">Turn any e-book (PDF) into audio. Files stay in your browser.</p>
+            <p data-l="id">Ubah e-book (PDF) menjadi audio. File tetap di browser kamu.</p>
+            <div class="links">
+              <a href="https://putranmakatita.github.io/ebureader/" target="_blank" rel="noopener"><span
+                  data-l="en">Live demo</span><span data-l="id">Lihat demo</span></a>
+              <a href="https://github.com/putranmakatita/ebureader" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </figure>
+          <figure class="project">
+            <h3>Weather Report</h3>
+            <p data-l="en">Reports the current weather around the world.</p>
+            <p data-l="id">Menampilkan cuaca terkini di seluruh dunia.</p>
+            <div class="links">
+              <a href="https://putranmakatita.github.io/Weather-Report" target="_blank" rel="noopener"><span
+                  data-l="en">Live demo</span><span data-l="id">Lihat demo</span></a>
+              <a href="https://github.com/putranmakatita/Weather-Report" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. TESTIMONIALS (pinned, one quote at a time) ===== -->
+    <section class="quotes pin" id="testimonials" data-pin>
+      <div class="stage">
+        <!-- To add a testimonial: copy one <blockquote class="quote"> block. -->
+        <blockquote class="quote">
+          <p>"Putra adalah seorang programmer yang luar biasa. Keahliannya dalam bahasa pemrograman dan teknologi
+            terkait sangat mengesankan. Putra mampu bekerja dengan baik dalam tim, menghadapi tantangan teknis, dan
+            memberikan solusi efektif."</p>
+          <footer><img src="assets/clients/agil.jpg" alt=""><span>Agil S.<small>Web Developer at RC
+                Electronic</small></span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"Putra merupakan anggota tim yang luar biasa untuk bekerja sama. Ia berkomunikasi dengan efektif,
+            beradaptasi dengan cepat, dan selalu memberikan solusi kreatif."</p>
+          <footer><img src="assets/clients/dendi.jfif" alt=""><span>Dendi Nurmahmudi<small>Senior Web Developer at RC
+                Electronic</small></span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"Sangat mengesankan bagaimana Putra dapat dengan jelas menjelaskan masalah yang terjadi dan menawarkan
+            solusi yang tepat."</p>
+          <footer><img src="assets/clients/eva.jpg" alt=""><span>Eva Nur R.<small>Partner &amp; Owner of Eve's
+                kitchen</small></span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <!-- TODO: this text came from a template. Replace it with Lukman's real words. -->
+          <p>"The master-builder of human happiness no one rejects, dislikes avoids pleasure itself, because it is very
+            pursue pleasure."</p>
+          <footer><img src="assets/clients/lukman.jpg" alt=""><span>Lukman Alvero<small>UI/UX Designer at RC
+                Electronic</small></span></footer>
+        </blockquote>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <!-- ===== 6. CONTACT ===== -->
+    <section class="contact" id="contact">
+      <h2><span data-l="en">Let's build something.</span><span data-l="id">Ayo bangun sesuatu.</span></h2>
+      <ul>
+        <li><a href="https://api.whatsapp.com/send?phone=6289604300702&text=Hallo%20Putra!">WhatsApp</a></li>
+        <!-- <li><a href="https://www.instagram.com/putranmakatita/">Instagram</a></li> -->
+        <li><a href="https://www.linkedin.com/in/putra-makatita-580640223/">LinkedIn</a></li>
+        <li><a href="https://github.com/putranmakatita">GitHub</a></li>
+        <li><a href="mailto:putranmakatita723@gmail.com">Email</a></li>
+      </ul>
+      <p class="copy">© 2026 <a href="https://github.com/putranmakatita">putranmakatita</a>. All rights reserved.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

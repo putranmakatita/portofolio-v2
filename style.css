@@ -1,0 +1,578 @@
+/* =========================================================
+   STYLE GUIDE – change colours and fonts here first
+   ========================================================= */
+:root {
+  --bg: #0e1330;
+  /* page background (midnight indigo) */
+  --bg-soft: #181f47;
+  /* slightly lighter panels */
+  --text: #e9ecff;
+  /* main text */
+  --muted: #9aa3d6;
+  /* secondary text */
+  --accent: #ffc857;
+  /* highlight colour (amber) */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+  /* side spacing */
+}
+
+/* ---------- Basics ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 1.05rem/1.7 var(--font-body);
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 800;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Language switch: JS sets data-lang on <html> */
+html[data-lang="en"] [data-l="id"],
+html[data-lang="id"] [data-l="en"] {
+  display: none;
+}
+
+/* ---------- Scroll progress bar ---------- */
+#progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 4px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 30;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--pad);
+  mix-blend-mode: difference;
+}
+
+.nav nav {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+#langBtn {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  border-radius: 99px;
+  padding: .2rem .8rem;
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .nav nav a {
+    display: none;
+  }
+}
+
+/* ---------- Pinned sections ----------
+   .pin is tall (so you have room to scroll), .stage stays stuck on screen.
+   Make a section "longer" by raising its height below. */
+.pin {
+  position: relative;
+}
+
+.pin .stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#hero {
+  height: 300vh;
+}
+
+#work {
+  height: 400vh;
+}
+
+#personal {
+  height: 300vh;
+}
+
+#testimonials {
+  height: 400vh;
+}
+
+/* ---------- 1. Hero ---------- */
+#hero .stage {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: var(--pad);
+}
+
+.name {
+  font-size: clamp(5rem, 24vw, 20rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  display: flex;
+  justify-content: center;
+}
+
+.name span {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hello {
+  font-size: 1.3rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity .6s;
+}
+
+.roles {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.4vw, 2.2rem);
+}
+
+.roles li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .6s;
+}
+
+.hello.on,
+.roles li.on {
+  opacity: 1;
+  transform: none;
+}
+
+.roles li.on {
+  color: var(--accent);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  transition: opacity .4s;
+}
+
+/* ---------- 2. About ---------- */
+.about {
+  padding: 25vh var(--pad);
+  background: var(--bg-soft);
+}
+
+.about-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+}
+
+.about h2 {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+}
+
+.reveal {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  line-height: 1.4;
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+.reveal .w {
+  opacity: .18;
+  transition: opacity .3s;
+}
+
+.reveal .w.on {
+  opacity: 1;
+}
+
+.skills {
+  margin: 2rem 0;
+  color: var(--accent);
+}
+
+.banner {
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #1a1500;
+  padding: .8rem 1.6rem;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform .2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.certs {
+  margin-top: 2.5rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+@media (max-width: 800px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about h2 {
+    position: static;
+  }
+}
+
+/* ---------- 3. Services (sticky stacking cards) ---------- */
+.services {
+  padding: 20vh var(--pad);
+  max-width: 900px;
+  margin: auto;
+}
+
+.services h2 {
+  margin-bottom: 3rem;
+}
+
+.card {
+  position: sticky;
+  top: 8rem;
+  background: var(--c);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  min-height: 16rem;
+  margin-bottom: 4rem;
+  transform-origin: top center;
+  transition: transform .2s, filter .2s;
+}
+
+.card h3 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  max-width: 36ch;
+}
+
+/* each card sticks a little lower than the one before, so edges peek out */
+.card:nth-of-type(2) {
+  top: 9.5rem;
+}
+
+.card:nth-of-type(3) {
+  top: 11rem;
+}
+
+.card:nth-of-type(4) {
+  top: 12.5rem;
+}
+
+.card:nth-of-type(5) {
+  top: 14rem;
+}
+
+/* ---------- 4. Work (horizontal scroll) ---------- */
+.hscroll .stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hscroll h2 {
+  padding: 0 var(--pad);
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 var(--pad);
+  width: max-content;
+  will-change: transform;
+}
+
+.track figure {
+  width: min(70vw, 560px);
+}
+
+.track img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 1rem;
+  background: var(--bg-soft);
+}
+
+.track figcaption {
+  margin-top: .6rem;
+  color: var(--muted);
+}
+
+/* Personal GitHub project cards (no screenshot, text + links) */
+.track .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: .6rem;
+  aspect-ratio: 16 / 10;
+  align-self: flex-start;
+  background: var(--bg-soft);
+  border: 1px solid var(--muted);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.project h3 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.project p {
+  color: var(--muted);
+}
+
+.project .links {
+  display: flex;
+  gap: .8rem;
+  margin-top: .6rem;
+}
+
+.project .links a {
+  border: 1px solid var(--muted);
+  border-radius: 99px;
+  padding: .4rem 1.1rem;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.project .links a:hover {
+  background: var(--accent);
+  color: #1a1500;
+  border-color: var(--accent);
+}
+
+/* ---------- 5. Testimonials ---------- */
+#testimonials .stage {
+  display: grid;
+  place-items: center;
+  padding: var(--pad);
+  background: var(--bg-soft);
+}
+
+.quote {
+  grid-area: 1 / 1;
+  max-width: 760px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: .6s;
+  pointer-events: none;
+}
+
+.quote.on {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  line-height: 1.35;
+}
+
+.quote footer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.quote footer img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote small {
+  display: block;
+  color: var(--muted);
+}
+
+.dots {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  gap: .6rem;
+}
+
+.dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: .4;
+  transition: .3s;
+}
+
+.dots i.on {
+  background: var(--accent);
+  opacity: 1;
+  transform: scale(1.4);
+}
+
+/* ---------- 6. Contact ---------- */
+.contact {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: var(--pad);
+  gap: 2rem;
+}
+
+.contact h2 {
+  font-size: clamp(2.5rem, 9vw, 7rem);
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact ul a {
+  display: block;
+  border: 1px solid var(--muted);
+  border-radius: 99px;
+  padding: .7rem 1.6rem;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.contact ul a:hover {
+  background: var(--accent);
+  color: #1a1500;
+  border-color: var(--accent);
+}
+
+.copy {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+/* ---------- Reduced motion: no pinning, everything visible ---------- */
+.calm .pin {
+  height: auto !important;
+}
+
+.calm .pin .stage {
+  position: static;
+  height: auto;
+  min-height: 60vh;
+  padding: 6rem var(--pad);
+}
+
+.calm .track {
+  width: auto;
+  flex-wrap: wrap;
+}
+
+.calm .quote {
+  opacity: 1;
+  transform: none;
+  grid-area: auto;
+  margin-bottom: 3rem;
+}
+
+.calm .hello,
+.calm .roles li {
+  opacity: 1;
+  transform: none;
+}
+
+.calm .reveal .w {
+  opacity: 1;
+}
+
+.calm #testimonials .stage {
+  display: block;
+}
